@@ -8,7 +8,7 @@ var userController = require('./controllers/user');
 var authController = require('./controllers/auth');
 
 // Connect to the beerlocker MongoDB
-mongoose.connect('mongodb://localhost:27017/payment_db');
+mongoose.connect('mongodb://heroku_app31419059:s8victqv8lk1umkjer2kuuqqk@ds051960.mongolab.com:51960/heroku_app31419059');
 
 // Create our Express application
 var app = express();
@@ -36,8 +36,8 @@ router.route('/payment')
 // Create endpoint handlers for /users
 router.route('/users')
   .post(userController.postUsers)
-  .get(authController.isAuthenticated, userController.getUsers);
-
+  .get(userController.getUsers)
+  .delete(userController.deleteUser);
 // Register all our routes with /api
 app.use('/api', router);
 
