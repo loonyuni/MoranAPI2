@@ -3,7 +3,7 @@ var Payment = require('../models/payment');
 
 // Create endpoint /api/payment for POST
 exports.postPayment = function(req, res) {
-  // Create a new instance of the Beer model
+  // Create a new instance of the payment model
   var payment = new Payment();
 
   // Set the payment properties that came from the POST data
@@ -11,7 +11,7 @@ exports.postPayment = function(req, res) {
   payment.status = req.body.status;
   payment.userId = req.user._id;
 
-  // Save the beer and check for errors
+  // Save payment
   payment.save(function(err) {
     if (err)
       res.send(err);
