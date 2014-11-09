@@ -43,13 +43,3 @@ exports.putPayment = function(req, res) {
   });
 };
 
-// // Create endpoint /api/beers/:beer_id for DELETE
-// exports.deletePayment = function(req, res) {
-//   // Use the Beer model to find a specific beer and remove it
-//   Beer.remove({ userId: req.user._id }, function(err) {
-//     if (err)
-//       res.send(err);
-
-//     res.json({ message: 'Beer removed from the locker!' });
-//   });
-// };
